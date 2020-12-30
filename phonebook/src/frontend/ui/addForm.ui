@@ -143,6 +143,16 @@
      <string>ADD</string>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="display">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>270</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -157,5 +167,22 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>add</sender>
+   <signal>clicked()</signal>
+   <receiver>display</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>344</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
