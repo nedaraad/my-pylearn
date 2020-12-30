@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'addForm.ui'
+# Form implementation generated from reading ui file 'src/frontend/ui/addForm.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -27,34 +27,36 @@ class Ui_MainWindow(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(10, 80, 81, 31))
-        self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(10, 130, 101, 31))
-        self.label_3.setObjectName("label_3")
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(10, 230, 141, 31))
-        self.label_5.setObjectName("label_5")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(130, 90, 201, 25))
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(130, 140, 201, 25))
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(130, 190, 113, 25))
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_4.setGeometry(QtCore.QRect(130, 240, 201, 25))
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.buttonBox = QtWidgets.QDialogButtonBox(self.centralwidget)
-        self.buttonBox.setGeometry(QtCore.QRect(230, 340, 166, 25))
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(10, 180, 121, 31))
-        self.label_4.setObjectName("label_4")
+        self.name = QtWidgets.QLabel(self.centralwidget)
+        self.name.setGeometry(QtCore.QRect(10, 80, 81, 31))
+        self.name.setObjectName("name")
+        self.family = QtWidgets.QLabel(self.centralwidget)
+        self.family.setGeometry(QtCore.QRect(10, 130, 101, 31))
+        self.family.setObjectName("family")
+        self.email = QtWidgets.QLabel(self.centralwidget)
+        self.email.setGeometry(QtCore.QRect(10, 230, 141, 31))
+        self.email.setObjectName("email")
+        self.fname = QtWidgets.QLineEdit(self.centralwidget)
+        self.fname.setGeometry(QtCore.QRect(130, 90, 201, 25))
+        self.fname.setObjectName("fname")
+        self.lname = QtWidgets.QLineEdit(self.centralwidget)
+        self.lname.setGeometry(QtCore.QRect(130, 140, 201, 25))
+        self.lname.setObjectName("lname")
+        self.phone = QtWidgets.QLineEdit(self.centralwidget)
+        self.phone.setGeometry(QtCore.QRect(130, 190, 113, 25))
+        self.phone.setObjectName("phone")
+        self.adress = QtWidgets.QLineEdit(self.centralwidget)
+        self.adress.setGeometry(QtCore.QRect(130, 240, 201, 25))
+        self.adress.setObjectName("adress")
+        self.number = QtWidgets.QLabel(self.centralwidget)
+        self.number.setGeometry(QtCore.QRect(10, 180, 121, 31))
+        self.number.setObjectName("number")
+        self.add = QtWidgets.QPushButton(self.centralwidget)
+        self.add.setGeometry(QtCore.QRect(300, 330, 89, 25))
+        self.add.setObjectName("add")
+        self.display = QtWidgets.QTextBrowser(self.centralwidget)
+        self.display.setGeometry(QtCore.QRect(0, 270, 256, 192))
+        self.display.setObjectName("display")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 402, 22))
@@ -65,16 +67,22 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.add.clicked.connect(self.getData)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def getData(self):
+        
+        print('Added New Contact: ', self.fname.text(), self.lname.text(), self.phone.text(), self.adress.text())
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Add New User"))
-        self.label_2.setText(_translate("MainWindow", "Name"))
-        self.label_3.setText(_translate("MainWindow", "Family"))
-        self.label_5.setText(_translate("MainWindow", "Email Adress"))
-        self.label_4.setText(_translate("MainWindow", "Phone Number"))
+        self.label.setText(_translate("MainWindow", "Add New Contact"))
+        self.name.setText(_translate("MainWindow", "Name"))
+        self.family.setText(_translate("MainWindow", "Family"))
+        self.email.setText(_translate("MainWindow", "Email Adress"))
+        self.number.setText(_translate("MainWindow", "Phone Number"))
+        self.add.setText(_translate("MainWindow", "ADD"))
 
 
 if __name__ == "__main__":
