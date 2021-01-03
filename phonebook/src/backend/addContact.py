@@ -71,8 +71,10 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def getData(self):
-        
-        print('Added New Contact: ', self.fname.text(), self.lname.text(), self.phone.text(), self.adress.text())
+        print("Added New Contact.\n {0:20s}|{1:30s}  |{2:11s}  |{3:30s}".format('Name', 'Family', 'Phone', 'Email'))
+        print("-------------------------------------------------------------------------------------------")
+        print("{0:20s} | {1:30s} | {2:11d} | {3:30s}".format(self.fname.text(), self.lname.text(), int(self.phone.text()), self.adress.text()))
+        #print('Added New Contact: ', self.fname.text(), self.lname.text(), self.phone.text(), self.adress.text())
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
