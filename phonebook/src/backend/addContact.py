@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
     def getData(self):
         print("Added New Contact.\n {0:^20}|{1:^30}  |{2:^11}  |{3:^30}".format('Name', 'Family', 'Phone', 'Email'))
         print("-------------------------------------------------------------------------------------------")
-        print("{0:20s} | {1:30s} | {2:11d} | {3:30s}".format(self.fname.text(), self.lname.text(), int(self.phone.text()), self.adress.text()))
+        print("{0:20s} | {1:30s} | {2:0>11d} | {3:30s}".format(self.fname.text(), self.lname.text(), int(self.phone.text()), self.adress.text()))
         #print('Added New Contact: ', self.fname.text(), self.lname.text(), self.phone.text(), self.adress.text())
 
     def retranslateUi(self, MainWindow):
