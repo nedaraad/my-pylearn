@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import model
+import control
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -67,12 +68,13 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.add.clicked.connect(self.getData)
+        self.add.clicked.connect(self.addPerson)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def getData(self):
-        
-        print('Added New Contact: ', self.fname.text(), self.lname.text(), self.phone.text(), self.adress.text())
+    def addPerson(self):
+        p = model.Person(self.fname.text(), self.lname.text(), self.phone.text(), self.adress.text())
+        csvpath = 'person.csv'
+        control.writeToCSV(p, csvpath)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
